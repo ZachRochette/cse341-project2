@@ -18,10 +18,11 @@ routes.get('/:id', (req, res) => {
 // CREATE NEW USER
 routes.post('/', (req, res) => {
   const user = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
+    username: req.body.username,
+    displayName: req.body.displayName,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    phoneNumber: req.body.phoneNumber
   };
   UsersModel.create(user, (err, result) => {
     if (err) console.log(err);

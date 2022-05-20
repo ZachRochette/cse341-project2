@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 // create schema and model
 const UserSchema = mongoose.Schema({
-  firstName: {
+  username: {
     type: String,
     required: true
   },
-  lastName: {
+  displayName: {
     type: String,
     required: true
   },
@@ -15,6 +15,10 @@ const UserSchema = mongoose.Schema({
     required: true
   },
   password: {
+    type: String,
+    required: true
+  },
+  phoneNumber: {
     type: String,
     required: true
   }
