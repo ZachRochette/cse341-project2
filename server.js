@@ -11,7 +11,7 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbname: ''
+    dbname: 'Project2 fullstack app'
   })
   .then(() => {
     console.log('Connected to mongodb');
