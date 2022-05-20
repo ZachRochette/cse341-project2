@@ -39,37 +39,34 @@ Content-Type: application/json
 
 // GET ALL CONTACTS
 ###
-GET https://cse341-heroku-app.herokuapp.com/contacts
+GET https://cse341-project2-fullstackapp.herokuapp.com/users
 
 // GET ONE CONTACT
 ### 
-GET https://cse341-heroku-app.herokuapp.com/contacts/627601e140c89737470f3f11
+GET https://cse341-project2-fullstackapp.herokuapp.com/users/62871ee7851bacd28d7c2bbd
 
 // CREATE CONTACT
 ###
-POST https://cse341-heroku-app.herokuapp.com/contacts HTTP/1.1
+POST https://cse341-project2-fullstackapp.herokuapp.com/users HTTP/1.1
 content-type:application/json
 
 {
-    "firstName":"Zach",
-    "lastName":"Rochette",
-    "email":"zach@example.com",
-    "favoriteColor": "red",
-    "birthday":"06/28/96",
-    "favoriteFood":"Oranges",
-    "placeOfBirth": "Billings",
-    "shoeSize": "9"
+    "username":"Zach",
+    "displayName":"Rochette",
+    "email":"Zach@example.com",
+    "password": "password",
+    "phoneNumber":"222-222-2222"
 }
 
 // DELETE CONTACT
 ###
-DELETE https://cse341-heroku-app.herokuapp.com/contacts/627601e140c89737470f3f11
+DELETE https://cse341-project2-fullstackapp.herokuapp.com/users/62871ee7851bacd28d7c2bbd
 
 // PUT UPDATE CONTACT
 ###
-PUT https://cse341-heroku-app.herokuapp.com/contacts/627601e140c89737470f3f11 HTTP/1.1
+PUT https://cse341-project2-fullstackapp.herokuapp.com/users/62871ecd851bacd28d7c2bbb HTTP/1.1
 Content-Type: application/json
 
 {
-    "favoriteColor":"yellow"
+    "password":"yellow"
 }
