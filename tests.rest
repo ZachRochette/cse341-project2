@@ -60,7 +60,7 @@ content-type:application/json
 
 // DELETE CONTACT
 ###
-DELETE https://cse341-project2-fullstackapp.herokuapp.com/users/628826f9657006a71090727d
+DELETE https://cse341-project2-fullstackapp.herokuapp.com/users/62882896657006a710907285
 
 // PUT UPDATE CONTACT
 ###
