@@ -1,0 +1,75 @@
+////////////////////////////////////////////////
+//// LOCAL TESTING 
+
+// GET ALL CONTACTS
+GET http://localhost:3000/users
+
+// GET ONE CONTACT
+### 
+GET http://localhost:3000/users/62871ecd851bacd28d7c2bbb
+
+// CREATE CONTACT
+###
+POST http://localhost:3000/users HTTP/1.1
+content-type:application/json
+
+{
+    "username": "adsf",
+    "displayName": "asdf",
+    "email": "adsf@example.com",
+    "password": "green",
+    "phoneNumber": "155-555-5555"
+}
+
+// DELETE CONTACT
+###
+DELETE http://localhost:3000/users/628825a51ae3bbf1f0a86c22
+
+// PUT UPDATE CONTACT
+###
+PUT http://localhost:3000/users/628825a51ae3bbf1f0a86c22 HTTP/1.1
+Content-Type: application/json
+
+{
+    "password":"yellow"
+}
+
+/////////////////////////////////////////////////
+//// HEROKU PUBLISHED
+
+// GET ALL CONTACTS
+###
+GET https://cse341-heroku-app.herokuapp.com/contacts
+
+// GET ONE CONTACT
+### 
+GET https://cse341-heroku-app.herokuapp.com/contacts/627601e140c89737470f3f11
+
+// CREATE CONTACT
+###
+POST https://cse341-heroku-app.herokuapp.com/contacts HTTP/1.1
+content-type:application/json
+
+{
+    "firstName":"Zach",
+    "lastName":"Rochette",
+    "email":"zach@example.com",
+    "favoriteColor": "red",
+    "birthday":"06/28/96",
+    "favoriteFood":"Oranges",
+    "placeOfBirth": "Billings",
+    "shoeSize": "9"
+}
+
+// DELETE CONTACT
+###
+DELETE https://cse341-heroku-app.herokuapp.com/contacts/627601e140c89737470f3f11
+
+// PUT UPDATE CONTACT
+###
+PUT https://cse341-heroku-app.herokuapp.com/contacts/627601e140c89737470f3f11 HTTP/1.1
+Content-Type: application/json
+
+{
+    "favoriteColor":"yellow"
+}
