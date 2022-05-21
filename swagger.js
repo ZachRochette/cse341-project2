@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Users API'
   },
-  host: 'localhost:3000',
+  host: 'cse341-project2-fullstackapp.herokuapp.com',
   schemes: ['https']
 };
 
