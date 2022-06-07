@@ -7,6 +7,10 @@
   },
   "host": "cse341-project2-fullstackapp.herokuapp.com",
   "basePath": "/",
+  "tags": {
+    "name": "pet",
+    "description": "Everything about your Pets"
+  },
   "schemes": [
     "https"
   ],
@@ -19,47 +23,48 @@
       }
     },
     "/users/": {
-      "title": "USER CRUD",
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
+      "/pet": {
+        "get": {
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
           }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "username": {
-                  "example": "any"
-                },
-                "displayName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                },
-                "phoneNumber": {
-                  "example": "any"
+        },
+        "post": {
+          "description": "",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "example": "any"
+                  },
+                  "displayName": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "password": {
+                    "example": "any"
+                  },
+                  "phoneNumber": {
+                    "example": "any"
+                  }
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
           }
         }
       }
