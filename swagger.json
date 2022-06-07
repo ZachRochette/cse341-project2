@@ -7,10 +7,24 @@
   },
   "host": "cse341-project2-fullstackapp.herokuapp.com",
   "basePath": "/",
-  "tags": {
-    "name": "pet",
-    "description": "Everything about your Pets"
-  },
+  "tags": [
+    {
+      "name": "USER CRUD",
+      "description": "CRUD operations to recieve standard user data"
+    },
+    {
+      "name": "FOLLOW/UNFOLLOW USER",
+      "description": "Access to Petstore orders"
+    },
+    {
+      "name": "LOGIN/REGISTER",
+      "description": "Access to Petstore orders"
+    },
+    {
+      "name": "USER POSTS",
+      "description": "Access to Petstore orders"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -23,111 +37,111 @@
       }
     },
     "/users/": {
-      "/pet": {
-        "get": {
-          "description": "",
-          "parameters": [],
-          "responses": {
-            "200": {
-              "description": "OK"
+      "/USER CRUD": {
+          "get": {
+            "description": "",
+            "parameters": [],
+            "responses": {
+              "200": {
+                "description": "OK"
+              }
             }
-          }
-        },
-        "post": {
-          "description": "",
-          "parameters": [
-            {
-              "name": "body",
-              "in": "body",
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "username": {
-                    "example": "any"
-                  },
-                  "displayName": {
-                    "example": "any"
-                  },
-                  "email": {
-                    "example": "any"
-                  },
-                  "password": {
-                    "example": "any"
-                  },
-                  "phoneNumber": {
-                    "example": "any"
+          },
+          "post": {
+            "description": "",
+            "parameters": [
+              {
+                "name": "body",
+                "in": "body",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "example": "any"
+                    },
+                    "displayName": {
+                      "example": "any"
+                    },
+                    "email": {
+                      "example": "any"
+                    },
+                    "password": {
+                      "example": "any"
+                    },
+                    "phoneNumber": {
+                      "example": "any"
+                    }
                   }
                 }
               }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              }
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
-          }
-        }
-      }
-    },
-    "/users/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           },
-          "404": {
-            "description": "Not Found"
+          "/users/{id}": {
+            "get": {
+              "description": "",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+            },
+            "put": {
+              "description": "",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+            },
+            "delete": {
+              "description": "",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+            }
           }
         }
       },
-      "put": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
     "/users/{id}/follow": {
       "put": {
         "description": "",
