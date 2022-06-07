@@ -18,6 +18,7 @@
         "responses": {}
       }
     },
+    "description": "# Standard DB CRUD",
     "/users/": {
       "get": {
         "description": "",
