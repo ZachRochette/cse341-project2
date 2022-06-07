@@ -2,7 +2,7 @@ const routes = require('express').Router();
 const UsersModel = require('../models/users');
 const bcrypt = require('bcrypt');
 
-// GET ALL USER
+// GET ALL USERS
 routes.get('/', (req, res) => {
   UsersModel.find({}, (err, result) => {
     res.status(200).json(result);
@@ -51,7 +51,7 @@ routes.delete('/:id', (req, res) => {
 
 // Login and Register
 //REGISTER
-routes.post('/', async (req, res) => {
+routes.post('/register', async (req, res) => {
   try {
     // generate new password
     const salt = await bcrypt.genSalt(10);
@@ -84,6 +84,49 @@ routes.post('/login', async (req, res) => {
     res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+//Follow and Unfollow a user
+//follow a user
+routes.put('/:id/follow', async (req, res) => {
+  if (req.body.userId !== req.params.id) {
+    try {
+      const user = await user.findById(req.params.id);
+      const currentUser = await user.findById(req.body.userId);
+      if (!user.followers.includes(req.body.userId)) {
+        await user.updateOne({ $push: { followers: req.body.userId } });
+        await currentUser.updateOne({ $push: { following: req.params.id } });
+        res.status(200).json('user has been followed');
+      } else {
+        res.status(403).json('you already follow this user');
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json('you cant follow yourself');
+  }
+});
+
+//unfollow a user
+routes.put('/:id/unfollow', async (req, res) => {
+  if (req.body.userId !== req.params.id) {
+    try {
+      const user = await user.findById(req.params.id);
+      const currentUser = await user.findById(req.body.userId);
+      if (user.followers.includes(req.body.userId)) {
+        await user.updateOne({ $pull: { followers: req.body.userId } });
+        await currentUser.updateOne({ $pull: { following: req.params.id } });
+        res.status(200).json('user has been followed');
+      } else {
+        res.status(403).json("you don't follow this user");
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json('you cant unfollow yourself');
   }
 });
 
