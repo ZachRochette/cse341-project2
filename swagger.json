@@ -39,8 +39,7 @@
     "/users/": {
       "/USER CRUD": {
         "get": {
-          "tags": [
-            "USER CRUD"
+          "tags": ["USER CRUD"
           ],
           "description": "",
           "parameters": [],
@@ -49,43 +48,43 @@
               "description": "OK"
             }
           }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "username": {
-                  "example": "any"
-                },
-                "displayName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                },
-                "phoneNumber": {
-                  "example": "any"
+        },
+        "post": {
+          "description": "",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "example": "any"
+                  },
+                  "displayName": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "password": {
+                    "example": "any"
+                  },
+                  "phoneNumber": {
+                    "example": "any"
+                  }
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
           }
         }
       }
-    },
+      },
     "/users/{id}": {
       "get": {
         "description": "",
