@@ -39,7 +39,8 @@
     "/users/": {
       "/USER CRUD": {
         "get": {
-          "tags": ["USER CRUD"
+          "tags": [
+            "USER CRUD"
           ],
           "description": "",
           "parameters": [],
@@ -50,6 +51,9 @@
           }
         },
         "post": {
+          "tags": [
+            "USER CRUD"
+          ],
           "description": "",
           "parameters": [
             {
