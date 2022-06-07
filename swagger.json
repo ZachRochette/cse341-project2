@@ -77,6 +77,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "A user with the specified id does not exist"
           }
         }
       },
