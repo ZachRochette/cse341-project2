@@ -10,9 +10,13 @@ routes.get('/', (req, res) => {
 
 // GET ONE USER
 routes.get('/:id', (req, res) => {
-  UsersModel.find({ _id: req.params.id }, (err, result) => {
-    res.status(200).json(result);
-  });
+  try {
+    UsersModel.find({ _id: req.params.id }, (err, result) => {
+      res.status(200).json(result);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // CREATE NEW USER
