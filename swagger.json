@@ -9,10 +9,6 @@
   "basePath": "/",
   "tags": [
     {
-      "name": "USER CRUD",
-      "description": "CRUD operations to recieve standard user data"
-    },
-    {
       "name": "FOLLOW/UNFOLLOW USER",
       "description": "Access to Petstore orders"
     },
@@ -21,7 +17,7 @@
       "description": "Access to Petstore orders"
     },
     {
-      "name": "USER POSTS",
+      "name": "USER",
       "description": "Access to Petstore orders"
     }
   ],
@@ -36,59 +32,57 @@
         "responses": {}
       }
     },
+    "tags": [
+      {
+        "name": "USER CRUD",
+        "description": "CRUD operations to recieve standard user data"
+      }
+    ],
     "/users/": {
-      "/USER CRUD": {
-        "get": {
-          "tags": [
-            "USER CRUD"
-          ],
-          "description": "",
-          "parameters": [],
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
-        },
-        "post": {
-          "tags": [
-            "USER CRUD"
-          ],
-          "description": "",
-          "parameters": [
-            {
-              "name": "body",
-              "in": "body",
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "username": {
-                    "example": "any"
-                  },
-                  "displayName": {
-                    "example": "any"
-                  },
-                  "email": {
-                    "example": "any"
-                  },
-                  "password": {
-                    "example": "any"
-                  },
-                  "phoneNumber": {
-                    "example": "any"
-                  }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "displayName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "phoneNumber": {
+                  "example": "any"
                 }
               }
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
-      },
+    },
     "/users/{id}": {
       "get": {
         "description": "",
@@ -148,6 +142,12 @@
         }
       }
     },
+    "tags": [
+      {
+        "name": "USER CRUD",
+        "description": "CRUD operations to recieve standard user data"
+      }
+    ],
     "/users/{id}/follow": {
       "put": {
         "description": "",
