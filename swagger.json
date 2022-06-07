@@ -76,10 +76,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "A user with the specified id does not exist"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { 
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
           }
         }
       },
