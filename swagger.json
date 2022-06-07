@@ -18,8 +18,8 @@
         "responses": {}
       }
     },
-    "title": "USER CRUD",
     "/users/": {
+      "title": "USER CRUD",
       "get": {
         "description": "",
         "parameters": [],
