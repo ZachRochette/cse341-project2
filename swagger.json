@@ -76,25 +76,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": { 
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
+            "description": "Success"
           }
         },
         "default": {
-          "description": "Unexpected error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
+          "description": "Unexpected error"
         }
       },
       "put": {
