@@ -4,6 +4,8 @@ const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const helmet = require('helmet');
+const morgan = require('morgan');
 
 dotenv.config();
 
@@ -24,6 +26,10 @@ app.use(bodyParser.json());
 
 // initialize routes
 app.use('/', require('./routes'));
+
+// middleware
+app.use(helmet());
+app.use(morgan('common'));
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
