@@ -37,111 +37,114 @@
       }
     },
     "/users/": {
-      "/USER CRUD": {
-          "get": {
-            "description": "",
-            "parameters": [],
-            "responses": {
-              "200": {
-                "description": "OK"
-              }
-            }
-          },
-          "post": {
-            "description": "",
-            "parameters": [
-              {
-                "name": "body",
-                "in": "body",
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "username": {
-                      "example": "any"
-                    },
-                    "displayName": {
-                      "example": "any"
-                    },
-                    "email": {
-                      "example": "any"
-                    },
-                    "password": {
-                      "example": "any"
-                    },
-                    "phoneNumber": {
-                      "example": "any"
-                    }
-                  }
-                }
-              }
-            ],
-            "responses": {
-              "200": {
-                "description": "OK"
-              }
-            }
-          },
-          "/users/{id}": {
-            "get": {
-              "description": "",
-              "parameters": [
-                {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-                }
-              ],
-              "responses": {
-                "200": {
-                  "description": "OK"
+      "tags": [
+        {
+          "name": "USER CRUD",
+          "description": "CRUD operations to recieve standard user data"
+        }],
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
                 },
-                "404": {
-                  "description": "Not Found"
-                }
-              }
-            },
-            "put": {
-              "description": "",
-              "parameters": [
-                {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-                }
-              ],
-              "responses": {
-                "200": {
-                  "description": "OK"
+                "displayName": {
+                  "example": "any"
                 },
-                "404": {
-                  "description": "Not Found"
-                }
-              }
-            },
-            "delete": {
-              "description": "",
-              "parameters": [
-                {
-                  "name": "id",
-                  "in": "path",
-                  "required": true,
-                  "type": "string"
-                }
-              ],
-              "responses": {
-                "200": {
-                  "description": "OK"
+                "email": {
+                  "example": "any"
                 },
-                "404": {
-                  "description": "Not Found"
+                "password": {
+                  "example": "any"
+                },
+                "phoneNumber": {
+                  "example": "any"
                 }
               }
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
         }
       },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/users/{id}/follow": {
       "put": {
         "description": "",
