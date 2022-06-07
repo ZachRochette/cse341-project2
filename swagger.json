@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "description": "# Standard DB CRUD",
+    "title": "USER CRUD",
     "/users/": {
       "get": {
         "description": "",
