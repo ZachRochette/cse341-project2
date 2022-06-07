@@ -41,9 +41,21 @@
     },
     "/users/": {
       "/USER CRUD": {
-        "get": [
-          "tags"
-        ],
+        "get": {
+          "tags": [
+            "USER CRUD"
+          ],
+          "description": "",
+          "parameters": [
+
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": null,
         "description": "",
         "parameters": [
           {
@@ -75,10 +87,7 @@
           "200": {
             "description": "OK"
           }
-        },
-        "post": [
-          "tags"
-        ]
+        }
       }
     },
     "/users/{id}": {
