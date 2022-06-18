@@ -87,12 +87,18 @@
         "description": "",
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "username": {
+                "userId": {
                   "example": "any"
                 },
                 "displayName": {
@@ -106,7 +112,7 @@
                 },
                 "phoneNumber": {
                   "example": "any"
-               }
+                }
               }
             }
           }
