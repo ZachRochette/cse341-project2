@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////
 //// LOCAL TESTING 
-
+//
 // GET ALL CONTACTS
 GET http://localhost:3000/users
 
