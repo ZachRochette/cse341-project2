@@ -36,13 +36,17 @@ routes.post('/', (req, res) => {
 
 // UPDATE USER
 routes.put('/:id', (req, res) => {
-  try {
-    UsersModel.findOneAndUpdate({ _id: req.params.id }, req.body, (err, result) => {
-      res.status(200).json(result);
-    });
-  } catch (err) {
-    res.status(404).json(' Could not find a user with that id');
-  }
+  const user = {
+    username: req.body.username,
+    displayName: req.body.displayName,
+    email: req.body.email,
+    password: req.body.password,
+    phoneNumber: req.body.phoneNumber
+  };
+  UsersModel.updateOne(user, (err, result) => {
+    if (err) console.log(err);
+    res.json(result);
+  });
 });
 
 // DELETE USER
